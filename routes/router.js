@@ -1,12 +1,12 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const mainPageRoute = require('./mainPage/mainPageRoute');
+const artistPageRoute = require('./artistPage/artistPageRoute')
+
 
 console.log('sallllaam');
+router.all('/', (mainPageRoute))
+router.all('/artist', (artistPageRoute));
 
-router.get('/', (req, res)=>{
-    res.send('SALAM')});
-  
-    router.post('/brat', (req, res)=>{
-        res.send('BRATUHA')});
-      
+
 module.exports = router;;
