@@ -4,6 +4,7 @@ const mainPageRoute = require('./mainPage/mainPageRoute');
 const artistPageRoute = require('./artistPage/artistPageRoute')
 
 
+
 console.log('sallllaam');
 router.all('/', (mainPageRoute))
 router.all('/artist', (artistPageRoute));
