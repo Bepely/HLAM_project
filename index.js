@@ -10,21 +10,18 @@ let port = process.env.PORT || 3003;
 const schema = require('./schema/schema');
 
 
-const MongoClient = db.MongoClient;
-const uri = "mongodb+srv://Bepely:Br4am70uk91@root.ytzk1.gcp.mongodb.net/root?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true});
-client.connect(err => {
+mongoose.connect('mongodb+srv://Bepely:87654321qqqq@root.ytzk1.gcp.mongodb.net/mainDB?retryWrites=true&w=majority', {
+   useNewUrlParser: true,
+   useUnifiedTopology: true })
 
-  const collection = client.db("mainDB").collection("content");
-  console.log('connected');
-  client.close();
-});
 mongoose.connection.once('open', ()=>{
-  console.log('connected to DB')})
+    console.log('connected to DB')})
+
 
 
 app.use(route);
 
+
 app.listen(port, ()=>{
-    console.log(`CEPBEP 3ATTCK 70T0B0. TT0PT ${port}`);
-});
+    console.log(`CEPBEP 3ATTCK 70T0B0. TT0PT ${port}`)
+})
